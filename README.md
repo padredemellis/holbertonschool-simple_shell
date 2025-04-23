@@ -1,3 +1,4 @@
+
 # Simple_Shell: Shellminator
 
 ¡Es hora conocer a Shellminator! Este no es un androide del futuro, ¡pero nos ayuda como si fuera uno!
@@ -128,9 +129,8 @@ FUNCIÓN buscar_ruta_comando(comando):
         SI archivo existe y es ejecutable:
             retornar ruta
     retornar NULL
+##  Autores
 
-##Autores
-Emanuel Romero
+Emanuel Romero -
 Nahuel Bica
-
-##Hasta la vista baby!
+## ¡Hasta la vista baby!
