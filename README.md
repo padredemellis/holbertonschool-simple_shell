@@ -128,6 +128,7 @@ FUNCIÓN buscar_ruta_comando(comando):
         SI archivo existe y es ejecutable:
             retornar ruta
     retornar NULL
+
 ##Autores
 Emanuel Romero
 Nahuel Bica
