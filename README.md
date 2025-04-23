@@ -3,7 +3,7 @@
 ¡Es hora conocer a Shellminator! Este no es un androide del futuro, ¡pero nos ayuda como si fuera uno!
 Shellminator es un intérprete de comandos sencillito, o sea, el traductor personal entre el usuario y la computadora.
 
-Tú le escribes las órdenes a Shellminator – y él, ¡zas!, se las pasa claritas a la PC para que se ponga manos a la obra.
+Tú le escribes las órdenes a Shellminator y él, ¡zas!, se las pasa claritas a la PC para que se ponga manos a la obra.
 
 
 ## Instalación
@@ -128,3 +128,8 @@ FUNCIÓN buscar_ruta_comando(comando):
         SI archivo existe y es ejecutable:
             retornar ruta
     retornar NULL
+##Autores
+Emanuel Romero
+Nahuel Bica
+
+##Hasta la vista baby!
