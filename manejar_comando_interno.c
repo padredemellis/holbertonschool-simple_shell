@@ -5,6 +5,9 @@
  */
 void manejar_comando_interno(char **args)
 {
+	int i;
+	char **env;
+
 	if (strcmp(args[0], "cd") == 0)
 	{
 		if (!args[1])
@@ -20,14 +23,18 @@ void manejar_comando_interno(char **args)
 		}
 		else
 		{
+			for (i = 0; args[i] != NULL; i++)
+				free(args[i]);
+			free(args);
 			exit(0);
 		}
 	}
 	else if (strcmp(args[0], "env") == 0)
 	{
-		for (char **env = environ; *env; env++)
+		for (env = environ; *env; env++)
 		{
 			printf("%s\n", *env);
 		}
 	}
+	(void)i;
 }
