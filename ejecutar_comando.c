@@ -31,7 +31,7 @@ void ejecutar_comando(char **args)
 			ejecutar_comando_externo(ruta_completa, args);
 			return;
 		}
-		fprintf(stderr, "%s: comando no encontrado\n", args[0]);
+		fprintf(stderr, "%s: not found\n", args[0]);
 		exit(127);
 	}
 	else
