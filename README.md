@@ -78,14 +78,17 @@ total 4
 ## Inicio del shell
 ### Ejecuta 'ls'
  /home/user SHELLMINATOR> ls
+ 
  main.c  shellminator
 
 ### Ejecuta 'cd' con directorio no existente
  /home/user SHELLMINATOR> cd no_existo
+ 
  cd: No such file or directory  # Error de chdir()
 
 ### Ejecuta un comando inexistente
  /home/user SHELLMINATOR> hola
+ 
  hola: not found    # Comando inexistente
 
 ### Ejecuta comando 'exit'
