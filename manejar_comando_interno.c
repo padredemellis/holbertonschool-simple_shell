@@ -11,7 +11,7 @@ void manejar_comando_interno(char **args)
 	if (strcmp(args[0], "cd") == 0)
 	{
 		if (!args[1])
-			fprintf(stderr, "cd: falta el argumento de directorio\n");
+			chdir("/root");
 		else if (chdir(args[1]) != 0)
 			perror("cd");
 	}
@@ -19,7 +19,7 @@ void manejar_comando_interno(char **args)
 	{
 		if (args[1])
 		{
-			fprintf(stderr, "exit: demasiados argumentos\n");
+			fprintf(stderr, "exit: too many arguments\n");
 		}
 		else
 		{
