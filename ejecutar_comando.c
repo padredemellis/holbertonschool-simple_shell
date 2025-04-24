@@ -18,7 +18,6 @@ void ejecutar_comando(char **args)
 		return;
 	}
 	pid = fork();
-
 	if (pid == -1)
 	{
 		perror("fork error");
@@ -30,19 +29,19 @@ void ejecutar_comando(char **args)
 		if (ruta_completa)
 		{
 			ejecutar_comando_externo(ruta_completa, args);
+			return;
 		}
-		else
-		{
-			fprintf(stderr, "%s: comando no encontrado\n", args[0]);
-			exit(127);
-		}
+		fprintf(stderr, "%s: comando no encontrado\n", args[0]);
+		exit(127);
 	}
 	else
 	{
 		waitpid(pid, &status, 0);
 		if (WIFEXITED(status))
-			printf("Estado: %d\n", WEXITSTATUS(status));
+		{
+		}
 		else if (WIFSIGNALED(status))
-			printf("Señal: %d\n", WTERMSIG(status));
+		{
+		}
 	}
 }
