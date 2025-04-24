@@ -37,11 +37,5 @@ void ejecutar_comando(char **args)
 	else
 	{
 		waitpid(pid, &status, 0);
-		if (WIFEXITED(status))
-		{
-		}
-		else if (WIFSIGNALED(status))
-		{
-		}
 	}
 }
