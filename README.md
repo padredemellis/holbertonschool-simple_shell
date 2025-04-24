@@ -73,22 +73,24 @@ total 4
 
 [![shellminator.jpg](https://i.postimg.cc/grFwd4Ng/shellminator.jpg)](https://postimg.cc/FkpFVbtS)
 
-## Corrida de escritorio
+# Corrida de escritorio
 
-# Inicio del shell
-/home/user SHELLMINATOR> ls
-main.c  shellminator
-# Ejecuta 'ls'
-Estado: 0
+## Inicio del shell
+### Ejecuta 'ls'
+ /home/user SHELLMINATOR> ls
+ main.c  shellminator
 
-/home/user SHELLMINATOR> cd no_existo
-cd: No such file or directory  # Error de chdir()
+### Ejecuta 'cd' con directorio no existente
+ /home/user SHELLMINATOR> cd no_existo
+ cd: No such file or directory  # Error de chdir()
 
-/home/user SHELLMINATOR> hola
-hola: comando no encontrado    # Comando inexistente
-Estado: 127
+### Ejecuta un comando inexistente
+ /home/user SHELLMINATOR> hola
+ hola: not found    # Comando inexistente
 
-/home/user SHELLMINATOR> exit  # Salir
+### Ejecuta comando 'exit'
+ /home/user SHELLMINATOR> exit  # Salir
+ 
 ## Pseudocódigo
 
 FUNCIÓN main():
