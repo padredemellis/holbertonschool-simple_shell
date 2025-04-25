@@ -17,6 +17,13 @@ void ejecutar_comando(char **args)
 		manejar_comando_interno(args);
 		return;
 	}
+	ruta_completa = buscar_ruta_comando(args[0]);
+	if (!ruta_completa)
+	{
+
+		fprintf(stderr, "%s: not found\n", args[0]);
+		exit(127);
+	}
 	pid = fork();
 	if (pid == -1)
 	{
@@ -25,17 +32,12 @@ void ejecutar_comando(char **args)
 	}
 	if (pid == 0)
 	{
-		ruta_completa = buscar_ruta_comando(args[0]);
-		if (ruta_completa)
-		{
-			ejecutar_comando_externo(ruta_completa, args);
-			return;
-		}
-		fprintf(stderr, "%s: not found\n", args[0]);
-		exit(127);
+		ejecutar_comando_externo(ruta_completa, args);
+		return;
 	}
 	else
 	{
 		waitpid(pid, &status, 0);
+		return;
 	}
 }
