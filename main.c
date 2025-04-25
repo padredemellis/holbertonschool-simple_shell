@@ -9,6 +9,8 @@ int main(void)
 	char **args;
 	int i;
 
+	signal(SIGINT, manejar_sigint);
+
 	while (1)
 	{
 		mostrar_prompt();

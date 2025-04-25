@@ -6,9 +6,11 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <signal.h>
 
 extern char **environ;
 
+void manejar_sigint(int sig);
 void mostrar_prompt(void);
 char *leer_entrada(void);
 char **analizar_entrada(char *linea);

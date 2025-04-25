@@ -1,0 +1,8 @@
+#include "shellminator.h"
+
+void manejar_sigint(int sig)
+{
+(void)sig;
+    printf("\n"); // Nueva línea limpia
+    mostrar_prompt(); // Vuelve a mostrar el prompt
+}
