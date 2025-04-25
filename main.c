@@ -13,7 +13,10 @@ int main(void)
 
 	while (1)
 	{
-		mostrar_prompt();
+		if (isatty(STDIN_FILENO))
+		{
+			mostrar_prompt();
+		}
 		linea = leer_entrada();
 		if (!linea)
 		{
