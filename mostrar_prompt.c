@@ -5,16 +5,19 @@
  */
 void mostrar_prompt(void)
 {
-	char ubicacion_actual[256];
+	if (isatty(STDIN_FILENO))
+	{
+		char ubicacion_actual[256];
 
-	if (getcwd(ubicacion_actual, sizeof(ubicacion_actual)))
-	{
-		printf("%s SHELLMINATOR> ", ubicacion_actual);
+		if (getcwd(ubicacion_actual, sizeof(ubicacion_actual)))
+		{
+			printf("%s SHELLMINATOR> ", ubicacion_actual);
+		}
+		else
+		{
+			perror("getcwd() error");
+			printf("SHELLMINATOR> ");
+		}
+		fflush(stdout);
 	}
-	else
-	{
-		perror("getcwd() error");
-		printf("SHELLMINATOR> ");
-	}
-	fflush(stdout);
 }
