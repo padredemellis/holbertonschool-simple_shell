@@ -20,8 +20,11 @@ int main(void)
 		linea = leer_entrada();
 		if (!linea)
 		{
-			printf("\n");
-			exit(EXIT_SUCCESS);
+			if (isatty(STDIN_FILENO))
+			{
+				printf("\n");
+				exit(EXIT_SUCCESS);
+			}
 		}
 		args = analizar_entrada(linea);
 		free(linea);

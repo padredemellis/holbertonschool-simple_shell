@@ -6,12 +6,7 @@
  */
 void ejecutar_comando_externo(char *ruta_completa, char **args)
 {
-	if (access(ruta_completa, X_OK) == 0)
-	{
-		execve(ruta_completa, args, environ);
-		perror("execve error");
-	}
-	else
+	if (execve(ruta_completa, args, environ) == -1)
 	{
 		fprintf(stderr, "%s: comando no encontrado\n", args[0]);
 	}
