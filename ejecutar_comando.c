@@ -1,15 +1,17 @@
 #include "shellminator.h"
+
 /**
- * ejecutar_comando - Función principal
- * @args: Array de argumentos
+ * ejecutar_comando - Ejecuta comandos externos
+ * @args: Argumentos
  * @command_count: Contador de comandos
- * @shell_name: nombre de la Shellminator
+ * @shell_name: Nombre del shell
+ * Return: Código de salida
  */
 int ejecutar_comando(char **args, int command_count, char *shell_name)
 {
 	pid_t pid;
-	int status, exit_status;
-	char *ruta_completa;
+	int status, exit_status = 0;
+	char *ruta_completa = NULL;
 
 	if (!args || !args[0])
 		return (0);
@@ -48,4 +50,3 @@ int ejecutar_comando(char **args, int command_count, char *shell_name)
 	}
 	return (exit_status);
 }
-

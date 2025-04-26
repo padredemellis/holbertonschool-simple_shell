@@ -9,7 +9,9 @@
 #include <signal.h>
 
 extern char **environ;
+extern char *oldpwd;
 
+void liberar_recursos(void);
 void manejar_sigint(int sig);
 void mostrar_prompt(void);
 char *leer_entrada(void);

@@ -1,7 +1,7 @@
 #include "shellminator.h"
 
 /**
- * buscar_ruta_comando - Busca el comando en el PATH
+ * buscar_ruta_comando - Busca el comando en PATH
  * @comando: Nombre del comando
  * Return: Ruta completa o NULL
  */

@@ -3,7 +3,7 @@
 /**
  * analizar_entrada - Divide la entrada en tokens
  * @linea: Cadena de entrada a analizar
- * Return: Array de argumentos, NULL en caso de error
+ * Return: Array de argumentos, NULL en error
  */
 char **analizar_entrada(char *linea)
 {
@@ -15,7 +15,7 @@ char **analizar_entrada(char *linea)
 
 	if (!args || !copy_linea)
 	{
-		perror("Error de asignacion de memoria");
+		perror("Error de asignacion");
 		free(args);
 		free(copy_linea);
 		return (NULL);
@@ -41,3 +41,4 @@ char **analizar_entrada(char *linea)
 	free(copy_linea);
 	return (args);
 }
+
