@@ -1,7 +1,5 @@
 #include "shellminator.h"
-
-char *oldpwd;
-
+char *oldpwd = NULL;
 /**
  * liberar_recursos - Libera memoria de variables globales
  */
@@ -17,7 +15,7 @@ void liberar_recursos(void)
  */
 void manejar_comando_interno(char **args)
 {
-	char *new_pwd, **env, *oldpwd = NULL;
+	char *new_pwd, **env;
 
 	if (strcmp(args[0], "cd") == 0)
 	{
@@ -27,7 +25,6 @@ void manejar_comando_interno(char **args)
 			new_pwd = oldpwd ? oldpwd : getenv("PWD");
 		else
 			new_pwd = args[1];
-
 		if (chdir(new_pwd) != 0)
 			perror("cd");
 		else
