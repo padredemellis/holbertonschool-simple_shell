@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 {
 	char *linea;
 	char **args;
-	int i;
+	int i, status;
 	int command_count = 0;
 	char *shell_name = argv[0];
 
@@ -37,7 +37,10 @@ int main(int argc, char **argv)
 		free(linea);
 		if (args)
 		{
-			ejecutar_comando(args, command_count, shell_name);
+			status = ejecutar_comando(args, command_count, shell_name);
+
+			if (!isatty(STDIN_FILENO))
+				exit(status);
 			for (i = 0; args[i]; i++)
 				free(args[i]);
 			free(args);

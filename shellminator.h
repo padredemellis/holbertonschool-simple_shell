@@ -17,5 +17,5 @@ char **analizar_entrada(char *linea);
 void manejar_comando_interno(char **args);
 char *buscar_ruta_comando(char *comando);
 void ejecutar_comando_externo(char *ruta_completa, char **args);
-void ejecutar_comando(char **args, int command_count, char *shell_name);
+int ejecutar_comando(char **args, int command_count, char *shell_name);
 #endif /* SHELLMINATOR_H */
