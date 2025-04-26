@@ -8,7 +8,6 @@
 char *buscar_ruta_comando(char *comando)
 {
 	char *path_env = NULL, *path_copy, *path_token, *ruta_completa = NULL;
-	char *saveptr = NULL;
 	int i, tam_ruta;
 
 	if (strchr(comando, '/'))
@@ -34,27 +33,23 @@ char *buscar_ruta_comando(char *comando)
 	if (!path_copy)
 		return (NULL);
 
-	path_token = strtok_r(path_copy, ":", &saveptr);
+	path_token = strtok(path_copy, ":");
 	while (path_token)
 	{
 		tam_ruta = strlen(path_token) + strlen(comando) + 2;
 		ruta_completa = malloc(tam_ruta);
-
 		if (!ruta_completa)
 		{
 			free(path_copy);
 			return (NULL);
 		}
-
 		snprintf(ruta_completa, tam_ruta, "%s/%s", path_token, comando);
 		if (access(ruta_completa, X_OK) == 0)
 			break;
-
 		free(ruta_completa);
 		ruta_completa = NULL;
-		path_token = strtok_r(NULL, ":", &saveptr);
+		path_token = strtok(NULL, ":");
 	}
-
 	free(path_copy);
 	return (ruta_completa);
 }
