@@ -8,7 +8,7 @@
 void manejar_sigint(int sig)
 {
 	(void)sig;
-	printf("\n");
+	write(STDOUT_FILENO, "\n", 1);
 	mostrar_prompt();
-	fflush(stdout);
+	signal(SIGINT, manejar_sigint);
 }
