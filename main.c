@@ -1,23 +1,32 @@
 #include "shellminator.h"
 /**
  * main - Punto de entrada del shell
+ * @argc: contador de argumentos
+ * @argv: argumentos
  * Return: Siempre 0 (éxito)
  */
 #include "shellminator.h"
+#include "shellminator.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
-	int i;
 	char *linea;
 	char **args;
+	int i;
+	int command_count = 0;
+	char *shell_name = argv[0];
+
+	(void)argc;
 
 	signal(SIGINT, manejar_sigint);
 
 	while (1)
 	{
+		command_count++;
 		if (isatty(STDIN_FILENO))
 			mostrar_prompt();
 		linea = leer_entrada();
+
 		if (!linea)
 		{
 			if (isatty(STDIN_FILENO))
@@ -28,7 +37,7 @@ int main(void)
 		free(linea);
 		if (args)
 		{
-			ejecutar_comando(args);
+			ejecutar_comando(args, command_count, shell_name);
 			for (i = 0; args[i]; i++)
 				free(args[i]);
 			free(args);
