@@ -1,5 +1,16 @@
 #include "shellminator.h"
 
+char *oldpwd = NULL;
+
+/**
+ * liberar_recursos - Libera memoria de variables globales
+ */
+void liberar_recursos(void)
+{
+	free(oldpwd);
+	oldpwd = NULL;
+}
+
 /**
  * manejar_comando_interno - Maneja cd, exit y env
  * @args: Argumentos del comando
