@@ -7,6 +7,7 @@
 
 int main(void)
 {
+	int i;
 	char *linea;
 	char **args;
 
@@ -28,7 +29,7 @@ int main(void)
 		if (args)
 		{
 			ejecutar_comando(args);
-			for (int i = 0; args[i]; i++)
+			for (i = 0; args[i]; i++)
 				free(args[i]);
 			free(args);
 		}

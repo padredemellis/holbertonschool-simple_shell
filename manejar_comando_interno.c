@@ -8,7 +8,7 @@
 void manejar_comando_interno(char **args)
 {
 	char *oldpwd = NULL;
-	char *new_pwd;
+	char *new_pwd, **env;
 
 	if (strcmp(args[0], "cd") == 0)
 	{
@@ -40,7 +40,7 @@ void manejar_comando_interno(char **args)
 	}
 	else if (strcmp(args[0], "env") == 0)
 	{
-		for (char **env = environ; *env; env++)
+		for (env = environ; *env; env++)
 		{
 			printf("%s\n", *env);
 		}
